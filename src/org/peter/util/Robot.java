@@ -36,8 +36,7 @@ import java.util.Properties;
 /**
  * Usefull Static Common Methods (in the test robot development).
  * 
- * @author Peter Balla
- * @version $Revision: 2.0 $
+ * @author loolek@gmail.com
  *
       $$$$$$$$$$$$$$$$$$ $$$  $$$   $     $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
       $$$$$$$$$$$$$$   $$    $$         $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$

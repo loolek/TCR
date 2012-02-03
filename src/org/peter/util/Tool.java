@@ -53,8 +53,7 @@ import java.util.regex.Pattern;
 /**
  * Usefull Common Static Methods (using only the standart java runtime API)
  * 
- * @author Peter Balla
- * @version $Revision: 4.0 $
+ * @author loolek@gmail.com
  *
           |  \ \ | |/ /
           |  |\ `' ' /
