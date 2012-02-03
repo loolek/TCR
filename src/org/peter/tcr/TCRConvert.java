@@ -18,8 +18,6 @@ import org.apache.log4j.Logger;
 import org.peter.util.Robot;
 import org.peter.util.Tool;
 
-//import hu.fot.util.LoggerUtil;
- 
 /**
  * This class parsing raw Globus Server Telnet communication's capture data, 
  * made with the tcpdump unix utility.
@@ -3168,47 +3166,6 @@ public class TCRConvert { // extends PerfGSummarizedScript {
       e.printStackTrace();
     }
   }
-
-/*
- * Saving special UNIX shell scripts for convert raw capture data 
- */
-  private static void saveUnixConvertScript() {
-/*    
-    #!/usr/bin/ksh
-
-    gunzip r6.record.011.gz
-    sudo /usr/sbin/tcpdump -tttt -vKXS -r r6.record.011 > r6.capture.011.txt
-*/
-    StringBuilder sb1 = new StringBuilder();
-    StringBuilder sb2 = new StringBuilder();
-    
-    sb1.append("#!/usr/bin/ksh\n\n");
-    sb1.append("gunzip r6.record.0.gz\n");
-    sb1.append("sudo /usr/sbin/tcpdump -tttt -vKXS -r r6.record.0 > r6.capture.00.txt" + "\n\n");
-
-    for (int i = 1; i < 61; i++) {
-      sb1.append("gunzip r6.record.0" + i + ".gz" + "\n");
-      sb1.append("sudo /usr/sbin/tcpdump -tttt -vKXS -r r6.record.0" + i + " > r6.capture.0" + i + ".txt" + "\n\n");
-    }
-/*    
-    #!/usr/bin/ksh
-    
-    cat r6.capture.01.txt >>r6.capture.txt
-*/    
-    sb2.append("#!/usr/bin/ksh\n\n");
-    
-    for (int i = 0; i < 62; i++) {
-      sb2.append("cat r6.capture.0" + i + ".txt" + " >>r6.capture.txt\n");
-    }
-
-    try {
-      Tool.save(new File("").getAbsolutePath() + SEP + "release" + SEP + "convert.sh", sb1.toString());
-      Tool.save(new File("").getAbsolutePath() + SEP + "release" + SEP + "concat.sh" , sb2.toString());
-      
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
   
   public boolean contains(String base, String pattern) {
     
@@ -3223,8 +3180,6 @@ public class TCRConvert { // extends PerfGSummarizedScript {
   ///////////////////////////////////////////////////////////////////
 
   public static void main(String[] args) {
-
-//  saveUnixConvertScript();
 
     TCRConvert parser = new TCRConvert();
 
